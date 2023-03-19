@@ -8,7 +8,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, Spec
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('markdownx/', include('markdownx.urls')),
-    path('api/', include('core.posts.api.routers')),
+    path('posts/', include('core.posts.api.routers')),
     #API
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
     # Optional UI:

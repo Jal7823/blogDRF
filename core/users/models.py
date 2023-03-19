@@ -11,19 +11,19 @@ class UserManager(BaseUserManager):
             email = self.normalize_email(email),
             name = name
         )
-        user.setpassword(password)
+        user.set_password(password)
         user.save()
         return user
     
     def create_superuser(self, username, email, name, password):
         user = self.create_user(
-            email,
-            username=username,
-            name=name,
-            password=password,
-        )
+        username=username,
+        email=email,
+        name=name,
+        password=password,
+    )
 
-        user.staff = True
+        user.is_staff = True
         user.save()
         return user
 
@@ -43,10 +43,6 @@ class User(AbstractUser):
 
     def has_module_perms(self, usuarios_label):
         return True
-    
-    @property
-    def is_staff(self):
-        return self.is_staff
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email','name']

@@ -25,7 +25,7 @@ if DEBUG:
         }
     }
 else:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
     
     DATABASES = {
     'default': {

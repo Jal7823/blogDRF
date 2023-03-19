@@ -57,13 +57,22 @@ python manage.py runserver.
 
 The following API endpoints are available:
 
-- GET /api/posts/: Get a list of all blog posts.
-- POST /api/posts/: Create a new blog post.
-- GET /api/posts/:id/: Get a specific blog post by ID.
-- PUT /api/posts/:id/: Update a specific blog post by ID.
-- DELETE /api/posts/:id/: Delete a specific blog post by ID.
-- GET /api/users/: Get a list of all users.
-- POST /api/users/: Create a new user.
-- GET /api/users/:id/: Get a specific user by ID.
-- PUT /api/users/:id/: Update a specific user by ID.
-- DELETE /api/users/:id/: Delete a specific user by ID.
+### Post
+
+- GET /posts/: Get a list of all blog posts.
+- POST /posts/: Create a new blog post.
+- GET /posts/:id/: Get a specific blog post by ID.
+- PUT /posts/:id/: Update a specific blog post by ID.
+- DELETE /posts/:id/: Delete a specific blog post by ID.
+- GET /posts/: Get a list of all users.
+- POST /posts/: Create a new user.
+- GET /posts/:id/: Get a specific user by ID.
+- PUT /posts/:id/: Update a specific user by ID.
+- DELETE /posts/:id/: Delete a specific user by ID.
+
+### Token
+- POST /token: create new token 
+- POST /token/refresh: refresh token
+
+### Users
+- POST /users/register: register a new users

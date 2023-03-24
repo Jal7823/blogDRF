@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m+*97%0$fkbbox*zsycs0ar#cb2=fv!tg3x5%s5$fe_tx4&9p9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     ALLOWED_HOSTS = []
@@ -25,16 +25,19 @@ if DEBUG:
         }
     }
 else:
-    ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS')
+    ALLOWED_HOSTS = ['libraryapidrf.pythonanywhere.com',]
     
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('NAME'),
-        'USER': os.getenv('USER'),
-        'PASSWORD': os.getenv('PASSWORD'),
-        'HOST': os.getenv('HOST'),
+        'NAME': 'libraryapidrf$blog',
+        'USER': 'libraryapidrf', 
+        'PASSWORD': '23051988joswelj',
+        'HOST': 'libraryapidrf.mysql.pythonanywhere-services.com',
         'PORT': '3306',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 
@@ -153,7 +156,7 @@ REST_FRAMEWORK = {
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Blog API',
-    'DESCRIPTION': 'Api blog',
+    'DESCRIPTION': 'This API provides a RESTful interface for managing blog posts and users of a Django blog project. The API includes endpoints for creating, reading, updating, and deleting blog posts and users, as well as endpoints for registering new users and managing authentication tokens. To use the API, first authenticate using the /token endpoint and obtain a token. Then, use the available endpoints to create, read, update, and delete blog posts and users as needed.',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     # OTHER SETTINGS

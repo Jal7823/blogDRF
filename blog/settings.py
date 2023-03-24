@@ -168,4 +168,6 @@ SIMPLE_JWT = {
 }
 
 
-CORS_ORIGIN_WHITELIST = []
+CORS_ORIGIN_WHITELIST = [
+'http://localhost:5173/'
+]

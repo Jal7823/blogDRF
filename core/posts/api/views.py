@@ -9,7 +9,7 @@ from .serializer import SerializerCategories,SerializerPost
 class ViewSetPost(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = SerializerPost
-    permission_classes = [IsAuthenticated]
+#     permission_classes = [IsAuthenticated]
 
 
 class ViewSetCategories(viewsets.ModelViewSet):
